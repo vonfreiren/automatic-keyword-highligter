@@ -5,7 +5,7 @@ from edit_md import edit_file
 
 def format_article(file_path, number_of_words=10, include_non_existing_words=False, number_of_non_exist_voc = 2,  split_word='Introduction', language='english'):
 
-    results, words_not_voc = get_scores(file_path, language)
+    results, words_not_voc, split_word = get_scores(file_path, language)
 
     top_results = results[:number_of_words]
 
@@ -22,8 +22,9 @@ def format_article(file_path, number_of_words=10, include_non_existing_words=Fal
 
 ### Edit this file path
 
-file_path = '/Users/javier/IdeaProjects/vonfreiren.github.io/_posts/2022-11-04-how-nutrition-is-impacting-your-life.md'
+file_path = '/Users/javier/IdeaProjects/vonfreiren.github.io/_posts/2022-12-06-the-future-of-deep-learning.md'
+file_path = input("Include Link To Markdownfile: ")
 
 ### Edit this file path
 
-format_article(file_path, number_of_words=10, include_non_existing_words=False, number_of_non_exist_voc = 2,  split_word='Introduction', language='english')
+format_article(file_path, number_of_words=10, include_non_existing_words=False, number_of_non_exist_voc = 2,  split_word='Introduction', language='spanish')

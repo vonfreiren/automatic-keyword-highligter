@@ -9,7 +9,8 @@ from operator import itemgetter
 def get_scores(file, language='english'):
 
     #Your text®
-    text = [get_text_article(file)]
+    text, split_word = get_text_article(file)
+    text = [text]
 
     list_words = []
     list_word_not_voc = []
@@ -45,4 +46,4 @@ def get_scores(file, language='english'):
     for word in sorted_word_counts:
         list_word_not_voc.append(word[0])
 
-    return list_words, list_word_not_voc
+    return list_words, list_word_not_voc, split_word

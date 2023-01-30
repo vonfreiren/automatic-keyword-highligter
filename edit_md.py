@@ -13,10 +13,12 @@ def edit_file(file_path, keywords, split_word = 'Introduction'):
         if not line.startswith("##"):
             for key in keywords:
                 word = key
-                lines[i] = re.sub(word, pigment_key + word + pigment_key, lines[i])
+                word = " " + word + " "
+                lines[i] = re.sub(r'\b' + re.escape(word) + r'\b', pigment_key + word + pigment_key, lines[i])
 
     text = "\n".join(lines)
     md_content = intro + split_word + text
 
     with open(file_path, "w") as file:
         file.write(md_content)
+        print("File saved: " + file_path)
